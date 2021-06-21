@@ -5,7 +5,7 @@ import './Results.css';
 export const Results: React.FC<ResultsProps> = () => {
   return (
     <div>
-      Верстка Результатов
+      {/* Верстка Результатов */}
     </div>
   );
 };
