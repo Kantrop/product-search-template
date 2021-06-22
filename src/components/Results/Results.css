@@ -1,0 +1,21 @@
+.result_data {
+    display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.result_deg,
+.result_price {
+    color: rgb(141, 141, 141);
+}
+
+.result_deg {
+    float: left;
+    font-size: 18px;
+}
+
+.result_price {
+    float: right;
+    font-size: 16px;
+}
