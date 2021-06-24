@@ -6,9 +6,6 @@ import './Input.css';
 export const Input: React.FC<InputProps>  = () => {
   return (
     <div>
-      <head>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-      </head>
 			<p className="search_info">Search for something</p>
       <div className="search_form">
         <img src={Loupe} alt="loupe"/>

@@ -6,9 +6,6 @@ import './Header.css';
 export const Header: React.FC<HeaderProps> = () => {
   return (
     <div>
-      <head>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-      </head>
       <header>
       <img src={Logo} className="shop_logo" alt="logo"/>
       <a>Home</a>
