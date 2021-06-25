@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderComponent, InputComponent, ResultsComponent } from '../components';
+import { HeaderComponent, InputComponent, ResultsComponent, FooterComponent } from '../components';
 import './MainPage.css';
 
 export const MainPage = () => {
@@ -8,6 +8,7 @@ export const MainPage = () => {
       <HeaderComponent />
       <InputComponent />
       <ResultsComponent />
+      <FooterComponent />
     </>
   );
 };

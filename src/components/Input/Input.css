@@ -1,75 +1,77 @@
-.big_h1{
-	color:rgb(65, 55, 255);
-	font-weight:bold;
-	font-size:50px;
-    margin-top: 100px;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900,900i&display=swap&subset=cyrillic');
 
-.h1_index{
-	margin-top:-30px;
-    margin-right: 200px;
-	color:rgb(55, 55, 55);
-    font-size: 20px;
+.search_info{
+	margin-top:120px;
+    margin-right: 235px;
+	color: #EB5757;
+	font-weight: bold;
+    font-size: 'Montserrat';
+    font-size: 24px;
 }
 
 .search_form {
     position:relative;
     width: 100%;
     max-width:500px;
-    margin-top:70px;
     margin-right: 70px;
-    display:inline-block;
+    display:inline-flex;
 }
 
 .search_input {
-    width: 100%;
     padding-left: 25px;
     padding-right: 50px;
-    height: 50px;
+    height: 60px;
     border: none;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    border: 2px solid rgb(34, 3, 237);
-    font-family: 'Roboto', sans-serif;
-    background: rgba(255,255,255,0.1);
-    border-radius: 25px;
+    font-size: 54px;
+    color: #3F3631;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    background-color: transparent;
 }
 
-.search-submit{
-	position:absolute;
-	font-family:'fontello';
-	font-size:20px;
-	color:white;
-	top:7px;
-	right:-70px;
-	width:42px;
-	height:42px;
-	cursor:pointer;
-	line-height:42px;
-	text-align:center;
-	background: rgb(0, 51, 255);
-	background: -moz-linear-gradient(0deg, rgb(0, 17, 255) 0%, rgb(3, 84, 206) 100%);
-	background: -webkit-linear-gradient(0deg, rgb(0, 17, 255) 0%, rgb(3, 80, 162) 100%);
-	background: linear-gradient(0deg, rgb(13, 0, 255) 0%, rgb(2, 56, 158) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5800",endColorstr="#ffaa00",GradientType=1);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-.search-submit:hover,
-.search-submit:focus{
-	background: rgb(0, 17, 255);
-    background: -moz-linear-gradient(0deg, rgb(0, 8, 255) 0%, rgb(35, 149, 255) 100%);
-    background: -webkit-linear-gradient(0deg, rgb(0, 8, 255) 0%, rgb(35, 137, 247) 100%);
-    background: linear-gradient(0deg, rgb(0, 30, 255) 0%, rgb(49, 133, 243) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5e00",endColorstr="#ffd100",GradientType=1);
-}
-
-button {
-    border: none;
-    padding: 0;
+.search_input::placeholder {
+    color: #3F3631;
+    font-size: 54px;
+    font-family: 'Montserrat';
+    font-weight: bold;
 }
 
 input {
     outline:none;
+}
+
+.search_line {
+    width: 630px; 
+    transform: translate(80px, -10px);
+}
+
+.bottom_text {
+    width: 495px;
+    height: 79px;
+    font-family: 'Roboto';
+    color: #9C8E76;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 145%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.result_text {
+    width: 78px;
+    height: 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #828282;
+    
+    margin-right: 0px;
+    margin-top: 55px;
+    position: relative;
+    left: 39%;
+    transform: translate(-50%, 0);
 }
