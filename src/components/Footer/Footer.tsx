@@ -1,8 +1,8 @@
 import React from 'react';
-import { HeaderProps } from '../../types';
+import { FooterProps } from '../../types';
 import './Footer.css';
 
-export const Header: React.FC<HeaderProps> = () => {
+export const Footer: React.FC<FooterProps> = () => {
   return (
     <div>
       <footer>All rights reserved 2021</footer>
@@ -10,4 +10,4 @@ export const Header: React.FC<HeaderProps> = () => {
   );
 };
 
-export default Header;
+export default Footer;
