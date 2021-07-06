@@ -7,15 +7,17 @@
 
 .result_deg,
 .result_price {
-    color: rgb(141, 141, 141);
+    font-size: 22px;
+    color: #3F3631;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .result_deg {
     float: left;
-    font-size: 18px;
 }
 
 .result_price {
     float: right;
-    font-size: 16px;
 }

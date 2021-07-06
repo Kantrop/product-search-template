@@ -1,9 +1,39 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Results } from '../Results/Results';
 import { Loupe } from '../../assets';
 import { InputProps } from '../../types';
+import { IBeers } from '../../types/Beers';
 import './Input.css';
 
 export const Input: React.FC<InputProps>  = () => {
+
+  const [beers, setBeers] = useState<IBeers[]>([]);
+  let value = '';
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  async function fetchUsers() {
+    try {
+      if(value === '') {
+        const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers`);
+        setBeers(response.data);
+      } else {
+        const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers?beer_name=${value}`);
+        setBeers(response.data);
+      }
+    } catch (e) {
+      alert(e);
+    }
+  }
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    value = e.target.value;
+    fetchUsers();
+  };
+
   return (
     <div>
 			<p className="search_info">Search for something</p>
@@ -12,7 +42,7 @@ export const Input: React.FC<InputProps>  = () => {
         <input type="text" 
           className="search_input"
           placeholder="Barnsley Brew Coffee" 
-          onChange={(event) => console.log(event.target.value)}
+          onChange={changeHandler}
         />
       </div>
       <hr className="search_line" data-align="center" color="Black"/>
@@ -21,6 +51,7 @@ export const Input: React.FC<InputProps>  = () => {
         Search presented by public API, and all content are fake (or maybe not)
       </p>
       <p className="result_text">Results:</p>
+      <Results beers={beers}/>
     </div>
   );
 };

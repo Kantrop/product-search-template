@@ -1,3 +1,5 @@
-export type ResultsModalProps = {
+import { ResultsProps } from "./Results";
 
+export type ResultsModalProps = {
+    // result: ResultsProps;
 }

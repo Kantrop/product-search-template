@@ -1,23 +1,20 @@
-import Results from "../components/Results/Results";
-import { Instance } from 'mobx-state-tree';
-
 let url = `https://api.punkapi.com/v2`;
 
 export const getBeers = async () => {
   const response = await fetch(url + `/beers`);
-  const json = (await response.json()) as Instance<typeof Results>[];
+  const json = (await response.json());
   return json;
 };
 
 export const getBeersByName = async (name: string) => {
   const response = await fetch(url + `/beers?beer_name=${name}`);
-  const json = (await response.json()) as Instance<typeof Results>[];
+  const json = (await response.json());
   return json;
 };
 
 export const getBeer = async (id: number) => {
   const response = await fetch(url + `/beers/${id}`);
-  const json = (await response.json()) as Instance<typeof Results>[];
+  const json = (await response.json());
   return json;
 };
 
