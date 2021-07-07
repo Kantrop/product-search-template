@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { debounce } from '@material-ui/core';
 import { Results } from '../Results/Results';
 import { Loupe } from '../../assets';
 import { InputProps } from '../../types';
@@ -8,10 +9,11 @@ import { getBeers, getBeersByName } from '../../utils/api';
 
 export const Input: React.FC<InputProps>  = () => {
 
+  const users = debounce(fetchUsers, 500);
   const [beers, setBeers] = useState<IBeers[]>([]);
-
+  
   useEffect(() => {
-    fetchUsers('');
+    users('');
   }, []);
 
   async function fetchUsers(value: string) {
@@ -27,7 +29,8 @@ export const Input: React.FC<InputProps>  = () => {
   }
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    fetchUsers(e.target.value);
+    // fetchUsers(e.target.value);
+    users(e.target.value);
   };
 
   return (
