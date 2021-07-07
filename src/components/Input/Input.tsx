@@ -1,10 +1,10 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Results } from '../Results/Results';
 import { Loupe } from '../../assets';
 import { InputProps } from '../../types';
 import { IBeers } from '../../types/Beers';
 import './Input.css';
+import { getBeers, getBeersByName } from '../../utils/api';
 
 export const Input: React.FC<InputProps>  = () => {
 
@@ -17,11 +17,9 @@ export const Input: React.FC<InputProps>  = () => {
   async function fetchUsers(value: string) {
     try {
       if(value === '') {
-        const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers`);
-        setBeers(response.data);
+        setBeers(await getBeers());
       } else {
-        const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers?beer_name=${value}`);
-        setBeers(response.data);
+        setBeers(await getBeersByName(value));
       }
     } catch (e) {
       alert(e);

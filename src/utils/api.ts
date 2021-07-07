@@ -1,43 +1,18 @@
-let url = `https://api.punkapi.com/v2`;
+import axios from "axios";
+import { IBeers } from "../types/Beers";
 
 export const getBeers = async () => {
-  const response = await fetch(url + `/beers`);
-  const json = (await response.json());
-  return json;
+  const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers`);
+  return response.data;
 };
 
 export const getBeersByName = async (name: string) => {
-  const response = await fetch(url + `/beers?beer_name=${name}`);
-  const json = (await response.json());
-  return json;
+  const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers?beer_name=${name}`);
+  return response.data;
 };
 
-export const getBeer = async (id: number) => {
-  const response = await fetch(url + `/beers/${id}`);
-  const json = (await response.json());
-  return json;
-};
-
-/*export const fetchData = {
-  async fetchBeers() {
-    const response = await fetch(url + `/beers`)
-    const data = await response.json()
-    console.log('getBeers', data[0]);
-  },
-  async fetchRandomBeer() {
-    const response = await fetch(url + `/beers/random`);
-    const data = await response.json();
-    console.log('getRandomBeer', data[0]);
-  },
-  async fetchBeerById(id: number) {
-    let response = await fetch(url + `/beers/${id}`);
-    const data = await response.json();
-    console.log('getBeerById', data);
-  },
-  async fetchBeerByName(name: string) {
-    let response = await fetch(url + `/beers/${name}`);
-    const data = await response.json();
-    console.log('getBeerByName', data);
-  }
-}*/
+// export const getBeerById = async (id: number) => {
+//   const response = await axios.get<IBeers>(`https://api.punkapi.com/v2/beers/${id}`);
+//   return response.data;
+// };
 
