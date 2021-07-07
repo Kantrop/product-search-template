@@ -29,7 +29,6 @@ export const Input: React.FC<InputProps>  = () => {
   }
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // fetchUsers(e.target.value);
     users(e.target.value);
   };
 

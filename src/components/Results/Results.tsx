@@ -8,12 +8,12 @@ export const Results: React.FC<ResultsProps> = ({beers}) => {
   return (
     <div>
       {beers.map(beer =>
-        <Card key={beer.id} className="cart_root">
+        <Card key={beer.id} className="card_root">
           <img className="result_img" src={beer.image_url}/>
           <CardActionArea>
-            <CardMedia className="cart_media"/>
+            <CardMedia className="card_media"/>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2" style={{height: '65px'}}>
+              <Typography gutterBottom variant="h5" component="h2" className="result_name">
                 {beer.name}
               </Typography>
               <Typography className="result_description" variant="body2" color="textSecondary" component="p">
