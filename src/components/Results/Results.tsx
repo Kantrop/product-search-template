@@ -6,11 +6,14 @@ import './Results.css';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    marginTop: 100,
-    marginLeft: 40
+    marginTop: 300,
+    marginLeft: 40,
+    display: 'inline-flex',
+    minWidth: '250px'
+
   },
   media: {
-    height: 240,
+    height: 80,
   },
 });
 
@@ -22,18 +25,17 @@ export const Results: React.FC<ResultsProps> = ({beers}) => {
   return (
     <div>
       {beers.map(beer =>
-        <Card key={beer.id} className={classes.root} style={{display: "inline-flex", minWidth: "250px"}}>
+        <Card key={beer.id} className={classes.root}>
+          <img className="result_img" src={beer.image_url}/>
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image={beer.image_url}
-              title="beer image"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h5" component="h2" style={{height: '65px'}}>
                 {beer.name}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography className="result_description" variant="body2" color="textSecondary" component="p">
                 {beer.description}
               </Typography>
               <div className="result_data">

@@ -21,3 +21,16 @@
 .result_price {
     float: right;
 }
+
+.result_description {
+    overflow: hidden;
+    height: 60px;
+    text-overflow: ellipsis;
+}
+
+.result_img {
+    position: absolute;
+    width: 88px;
+    height: 310px;
+    transform: translate(125px, -240px);
+}
