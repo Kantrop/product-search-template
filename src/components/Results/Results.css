@@ -67,6 +67,7 @@
     line-height: 22px;
     text-align: center;
     color: #3F3631;
+    overflow: hidden;
 }
 
 .card_root:first-child {
@@ -76,7 +77,7 @@
 .card_root:first-child img {
     width: 210px;
     height: 540px;
-    transform: translate(110px, -450px);
+    transform: translate(110px, -470px);
 }
 
 .card_root:first-child .result_name {
