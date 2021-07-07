@@ -9,13 +9,12 @@ import './Input.css';
 export const Input: React.FC<InputProps>  = () => {
 
   const [beers, setBeers] = useState<IBeers[]>([]);
-  let value = '';
 
   useEffect(() => {
-    fetchUsers();
+    fetchUsers('');
   }, []);
 
-  async function fetchUsers() {
+  async function fetchUsers(value: string) {
     try {
       if(value === '') {
         const response = await axios.get<IBeers[]>(`https://api.punkapi.com/v2/beers`);
@@ -30,8 +29,7 @@ export const Input: React.FC<InputProps>  = () => {
   }
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    value = e.target.value;
-    fetchUsers();
+    fetchUsers(e.target.value);
   };
 
   return (
